@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table class="table" th:each="f : ${filmes}" th:object="${f}">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Imagem</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Preço</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">1</th>
+        <td th:text="*{id}"></td>
+        <td>
+            <img th:src="@{'/images/' + *{imagemUri}}"/>
+        </td>
+        <td th:text="*{nome}"></td>
+        <td th:text="*{preco}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
